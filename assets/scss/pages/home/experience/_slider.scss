@@ -1,6 +1,5 @@
 @use "../../../presets" as *;
 @use "../../../mixins" as *;
-
 $size: 16px;
 
 .slider {
@@ -15,19 +14,23 @@ $size: 16px;
 
   &__headers {
     position: relative;
+
     display: flex;
-    flex-direction: column;
-    gap: 20px;
     flex-basis: 0;
+    flex-direction: column;
     flex-grow: 2;
 
+    gap: 20px;
     @include md-min {
       &::after {
         position: absolute;
         right: -42px;
+
         width: 4px;
         height: 100%;
+
         content: "";
+
         background-color: $color-gray-separator;
       }
     }
@@ -35,20 +38,25 @@ $size: 16px;
 
   &__header {
     position: relative;
+
     color: $color-gray-text;
 
     @include md-min {
-      font-size: 42px;
       text-align: right;
-    }
 
+      font-size: 42px;
+    }
     @include md {
       display: none;
-      font-size: 14px;
+
+      margin-bottom: 10px;
+
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 10px;
-      @include text-gradiend($bg-gradient-2)
+
+      font-size: 14px;
+
+      @include text-gradiend($bg-gradient-2);
     }
 
     &.active {
@@ -57,16 +65,18 @@ $size: 16px;
 
         &::after {
           position: absolute;
-          top: 0;
           z-index: 1;
+          top: 0;
           right: -42px;
+
           width: 4px;
           height: 100%;
+
           content: "";
+
           background-color: $color-accent;
         }
       }
-
       @include md {
         display: block;
       }
@@ -83,6 +93,7 @@ $size: 16px;
   &__note {
     position: absolute;
     z-index: -9999;
+
     opacity: 0;
     color: $color-white;
 
@@ -94,18 +105,21 @@ $size: 16px;
     &.active {
       position: static;
       z-index: inherit;
+
       opacity: 1;
     }
   }
 
   &__title {
     margin-bottom: 20px;
+
     @include md-min {
       font-size: 32px;
     }
     @include md {
-      font-size: 22px;
       margin-bottom: 15px;
+
+      font-size: 22px;
     }
   }
 
@@ -116,8 +130,9 @@ $size: 16px;
       font-size: 21px;
     }
     @include md {
-      font-size: 18px;
       margin-bottom: $gap;
+
+      font-size: 18px;
     }
   }
 
@@ -128,6 +143,7 @@ $size: 16px;
     @include md {
       display: flex;
       justify-content: center;
+
       gap: 14px;
     }
   }
@@ -135,9 +151,10 @@ $size: 16px;
   &__indicator {
     width: $size;
     height: $size;
-    background: $color-active;
-    border-radius: $size * 0.5;
+
     opacity: 0.2;
+    border-radius: $size * 0.5;
+    background: $color-active;
 
     &.active {
       opacity: 1;
