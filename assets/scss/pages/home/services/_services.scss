@@ -1,0 +1,47 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.services {
+  position: relative;
+
+  background: linear-gradient($bg-gradient-3);
+  border-radius: 0 0 12px 12px;
+  padding-bottom: 90px;
+
+  &::before {
+    position: absolute;
+    top: 100%;
+    left: 40px;
+    right: 40px;
+    background-color: $color-gray-separator;
+    height: 20px;
+    border-radius: 0 0 12px 12px;
+    content: "";
+  }
+
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    right: 20px;
+    background-color: $color-gray-text;
+    height: 10px;
+    border-radius: 0 0 12px 12px;
+    content: "";
+  }
+
+  &__container {
+    @extend %container;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 40px;
+    @include lg-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include lg-sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

@@ -6,6 +6,7 @@
   "author": "Andrey <fomenkoandrey1978@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "jquery": "^3.6.1",
     "normalize.css": "^8.0.1"
   }
 }

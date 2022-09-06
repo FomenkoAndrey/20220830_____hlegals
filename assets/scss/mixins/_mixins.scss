@@ -13,3 +13,13 @@
   bottom: $b;
   left: $l;
 }
+
+@mixin text-gradiend($gradient) {
+  span {
+    background: linear-gradient($gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
